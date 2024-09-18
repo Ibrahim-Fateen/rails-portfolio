@@ -7,4 +7,9 @@
   <p><%= portfolio_item.body %></p>
   <%= image_tag portfolio_item.thumb_image if portfolio_item.thumb_image %>
   <%= link_to "Edit", edit_porfolio_path(portfolio_item) %>
+
+  <%#= link_to "Delete", porfolio_path(portfolio_item), method: :delete %>
+  <!--  doesn't work-->
+
+  <%= button_to "Delete", portfolio_item, method: :delete %>
 <% end %>

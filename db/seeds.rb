@@ -24,7 +24,7 @@ end
 
 9.times do |portfolio_item|
   Porfolio.create!(
-    title: "Portfolio title: ##{portfolio_item + 1}",
+    title: "Portfolio title ##{portfolio_item + 1}",
     subtitle: 'Ruby on Rails',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ligula euismod, ultricies eros nec, luctus nunc. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
     main_image: 'http://placehold.it/600x400',
