@@ -4,6 +4,8 @@
 
 <h1>Blogs</h1>
 
+<%= link_to "New blog", new_blog_path %>
+<hr />
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
@@ -14,4 +16,3 @@
   <% end %>
 </div>
 
-<%= link_to "New blog", new_blog_path %>
