@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  resources :porfolios
-  get "pages/home"
-  get "pages/about"
-  get "pages/contact"
-  resources :blogs
+  resources :porfolios, except: [:show]
+  get "porfolio/:id", to: "porfolios#show", as: "porfolio_show"
+  get "/home", to: "pages#home"
+  get "/about", to: "pages#about"
+  get "/contact", to: "pages#contact"
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,4 +21,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root to: "pages#home"
 end
