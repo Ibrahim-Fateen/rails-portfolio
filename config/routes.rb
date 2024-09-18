@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :porfolios
-  get "pages/home"
-  get "pages/about"
-  get "pages/contact"
+  get "/home", to: "pages#home"
+  get "/about", to: "pages#about"
+  get "/contact", to: "pages#contact"
   resources :blogs
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root to: "pages#home"
 end
