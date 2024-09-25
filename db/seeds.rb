@@ -8,10 +8,17 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+3.times do |topic|
+  Topic.create!(
+    title: "Topic ##{topic + 1}"
+  )
+end
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post ##{blog + 1}",
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ligula euismod, ultricies eros nec, luctus nunc. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.'
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ligula euismod, ultricies eros nec, luctus nunc. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
+    topic_id: (blog % 3) + 1
   )
 end
 
@@ -22,7 +29,7 @@ end
   )
 end
 
-9.times do |portfolio_item|
+5.times do |portfolio_item|
   Porfolio.create!(
     title: "Portfolio title ##{portfolio_item + 1}",
     subtitle: 'Ruby on Rails',
@@ -31,5 +38,16 @@ end
     thumb_image: 'http://placehold.it/350x200'
   )
 end
+
+4.times do |portfolio_items|
+  Porfolio.create!(
+    title: "Portfolio title ##{portfolio_items + 6}",
+    subtitle: 'Angular',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ligula euismod, ultricies eros nec, luctus nunc. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.',
+    main_image: 'http://placehold.it/600x400',
+    thumb_image: 'http://placehold.it/350x200'
+  )
+end
+
 
 puts 'created db items'
